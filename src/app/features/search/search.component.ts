@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Hotel } from '../../model/hotel';
+import { Hotel, Room } from '../../model/hotel';
 import { NgForm } from '@angular/forms';
+import { CartService } from 'src/app/core/services/cart.service';
 
 
 
@@ -17,7 +18,7 @@ export class SearchComponent implements OnInit {
   hotels!: Hotel[]; 
   activeImage!: string; 
   
-  constructor(private http: HttpClient) {  
+  constructor(private http: HttpClient, private cartService: CartService) {  
   }
 
   ngOnInit(): void {
@@ -49,5 +50,9 @@ export class SearchComponent implements OnInit {
 
     form.reset();
    
+  }
+
+  addToCart(room: Room, active: Hotel) {
+    this.cartService.addToCart(active, room);
   }
 }
