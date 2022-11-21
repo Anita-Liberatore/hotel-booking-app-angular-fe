@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { CartItem } from 'src/app/model/cart-item';
 import {Hotel, Room} from '../../model/hotel';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ import {Hotel, Room} from '../../model/hotel';
 export class CartService {
 
     items: CartItem[] = [];
+
+    constructor(private auth: AuthService) {}
 
     addToCart(hotel: Hotel | undefined, room: Room | undefined) {
         if (hotel && room) {
@@ -28,7 +31,9 @@ export class CartService {
     }
 
     proceed() {
-        window.alert(this.items.length)
+        window.alert(
+          `Total Item: ${this.items.length}, Order: ${this.auth?.data?.name}`
+          )
     }
   
 }

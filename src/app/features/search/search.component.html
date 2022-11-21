@@ -15,14 +15,14 @@
       <div class="horiz-grid separator" *ngFor="let hotel of hotels"
         (click)="setActive(hotel)"
         [ngClass]="{'active': hotel.id === active.id}">
-        <div>{{hotel.name}}</div>
+        <div>{{hotel?.name}}</div>
         <div>da {{hotel.rooms[0].price}}</div>
       </div>
 
       <div class="separator"></div>
       <div class="horiz-grid">
         <div></div>
-        <em>{{hotels.length}} results</em>
+        <em>{{hotels?.length}} results</em>
       </div>
 
     </div>
@@ -32,11 +32,11 @@
   <div class="card map">
     <div>
       <img
-        src="https://www.mapquestapi.com/staticmap/v5/map?center={{active.location.address}}&size=500,200&key=Go3ZWai1i4nd2o7kBuAUs4y7pnpjXdZn"
+        src="https://www.mapquestapi.com/staticmap/v5/map?center={{active?.location?.address}}&size=500,200&key=Go3ZWai1i4nd2o7kBuAUs4y7pnpjXdZn"
         width="100%">
       <div class="address">
-        <div class="font-big">{{active.name}}</div>
-        <div class="font-small">{{active.location.address}}</div>
+        <div class="font-big">{{active?.name}}</div>
+        <div class="font-small">{{active?.location?.address}}</div>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
       <!--<img src="https://picsum.photos/400/200/?image=12" width="100%" height="200">-->
       <div class="separator"></div>
       <div class="font-superbig">
-        {{active.rate}}
+        {{active?.rate}}
         <i class="ion-ios-person"></i>
       </div>
       <div>
@@ -66,9 +66,9 @@
       <div class="horiz-grid separator"
       *ngFor="let room of active?.rooms" (click)="addToCart(room, active)"
     >
-      <div>{{room.label}}</div>
+      <div>{{room?.label}}</div>
       <div>
-        {{room.price}}
+        {{room?.price}}
         <i class="ion-ios-cart"></i>
       </div>
     </div>
@@ -81,7 +81,7 @@
     <img [src]="activeImage" width="100%"
       height="150">
     <div class="nested">
-      <div *ngFor="let img of active?.images" (click)="activeImage= img">
+      <div *ngFor="let img of active?.images" (click)="activeImage=img">
         <img [src]="img" width="100%">
       </div>
     </div>

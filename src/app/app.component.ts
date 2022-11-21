@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './core/services/auth.service';
 import { CartService } from './core/services/cart.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CartService } from './core/services/cart.service';
 })
 export class AppComponent {
 
-  constructor(public cartService: CartService) {
+  constructor(public auth: AuthService, public cartService: CartService) {
     
   }
 }
