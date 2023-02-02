@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
     selector: 'app-hotel-form',
@@ -7,6 +7,11 @@ import { Component, OnInit } from "@angular/core";
   })
   export class HotelFormComponent implements OnInit {
   
+
+    @Input() text!: string;
+    @Output() search: EventEmitter<string> = new EventEmitter<string>();
+
+
     ngOnInit(): void {
     }
 

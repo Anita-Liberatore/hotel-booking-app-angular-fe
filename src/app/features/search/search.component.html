@@ -3,13 +3,10 @@
   <div class="card side-bar scrollable">
     <div class="title">Search</div>
     <div class="content">
-      <form #f="ngForm" (submit)="searchHotels(f.value.text)">
-        <input type="text" placeholder="City (Rome or Milan)" [ngModel]="text"
-          name="text">
-        <button type="submit">SEARCH</button>
-      </form>
+     <app-hotel-form [text]="text" (search)="searchHotels($event)"></app-hotel-form>
 
       <div class="separator"></div>
+      
       <app-hotel-list [text]="text"
                       [active]="active"
                       [hotels]="hotels"
