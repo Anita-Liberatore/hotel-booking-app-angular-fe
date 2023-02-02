@@ -8,6 +8,7 @@ import { LoginComponent } from './features/login/login.component';
 import { CartComponent } from './features/cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { HotelListComponent } from './features/search/components/hotel-list/hotel-list.component';
 
 
 
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     SearchComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    HotelListComponent
   ],
   imports: [
     BrowserModule,
