@@ -9,6 +9,7 @@ import { CartComponent } from './features/cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HotelListComponent } from './features/search/components/hotel-list/hotel-list.component';
+import { HotelFormComponent } from './features/search/components/hotel-form/hotel-form.component';
 
 
 
@@ -18,7 +19,8 @@ import { HotelListComponent } from './features/search/components/hotel-list/hote
     SearchComponent,
     LoginComponent,
     CartComponent,
-    HotelListComponent
+    HotelListComponent,
+    HotelFormComponent
   ],
   imports: [
     BrowserModule,
